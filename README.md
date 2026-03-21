@@ -326,7 +326,7 @@ cambia los nombres de los drivers, si tienes el kernel lts va driver-lts para ot
 
 - echo **nombre PC** > /etc/hostname
 - passwd **password de root**
-- useradd -m -g users -G wheel -s /bin/bash **usuario**
+- useradd -m -g users -G wheel,audio,optical,storage,video -s /bin/bash **usuario**
 - passwd **usuario**
 
 > añadir sudo a usuario
