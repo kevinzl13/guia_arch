@@ -34,6 +34,7 @@ pacman -Sy
 
 - pacman-key --init
 - pacman-key --populate archlinux
+- pacman -Sy archlinux-keyring
 
 ## Comprobar UEFI o BIOS
 
@@ -218,17 +219,35 @@ Se conecta automaticamente
 - mkdir -p /mnt/boot/efi
 - mount /dev/sda1 /mnt/boot/efi
 
+## Btrfs
+- mkfs.fat -F32 -n "UEFI" /dev/sda1
+- mkswap /dev/sda2
+- swapon /dev/sda2
+- mkfs.btrfs /dev/sda3
+
+  > Montar Particiones
+
+- mount /dev/sda3 /mnt
+-  btrfs subvolume create /mnt/@
+-  btrfs subvolume create /mnt/@home
+-  btrfs subvolume create /mnt/@snapshots
+-  umount /mnt
+-  mount -o noatime,ssd,compress=zstd,subvol=@ /dev/sda1 /mnt
+-  mkdir -p /mnt/home
+-  mkdir -p /mnt/.snapshots
+-  mount -o noatime,ssd,compress=zstd,subvol=@home /dev/sda1 /mnt/home
+-  mount -o noatime,ssd,compress=zstd,subvol=@snapshots /dev/sda1 /mnt/.snapshots
+- mkdir -p /mnt/boot/efi
+- mount /dev/sda1 /mnt/boot/efi
 
 ## Instalar sistema base
 
-- pacstrap /mnt base base-devel nano
-- ls /mnt/
+- pacstrap -K /mnt base base-devel nano linux linux-headers mkinitcpio linux-firmware
 
-## Instalar Kernel
+> Si se crea con btrfs
+- pacstrap -K /mnt base base-devel nano linux linux-headers mkinitcpio linux-firmware btrfs-progs
 
-- pacstrap /mnt linux linux-headers mkinitcpio linux-firmware
-
-> Listado de Kernels
+### Listado de Kernels
 
 #### ● linux
 
