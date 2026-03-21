@@ -290,7 +290,7 @@ cambia los nombres de los drivers, si tienes el kernel lts va driver-lts para ot
 
 ### Montar discos automaticamente
 
-- genfstab -p /mnt >> /mnt/etc/fstab
+- genfstab -U /mnt >> /mnt/etc/fstab
 
 ## Entrar al sistema Arch
 
@@ -315,7 +315,7 @@ cambia los nombres de los drivers, si tienes el kernel lts va driver-lts para ot
 
 > Sincronizar las horas
 
-- hwclock -w
+- hwclock --systohc
 
 > Configurar teclado
 
