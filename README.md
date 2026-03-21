@@ -329,13 +329,16 @@ cambia los nombres de los drivers, si tienes el kernel lts va driver-lts para ot
 - useradd -m -g users -G wheel,audio,optical,storage,video -s /bin/bash **usuario**
 - passwd **usuario**
 
+> Instalar sudo
+- pacman -S sudo
+
 > añadir sudo a usuario
 
 - nano /etc/sudoers
 
-> buscar user privilege abajo de root poner
+> buscar %wheel y descomentar
 
-- **usuario** ALL=(ALL:ALL) ALL
+- %wheel ALL=(ALL:ALL) ALL
 
 ### Servicios de internet
 
