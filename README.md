@@ -343,15 +343,7 @@ cambia los nombres de los drivers, si tienes el kernel lts va driver-lts para ot
 ### Servicios de internet
 
 - pacman -S dhcp dhcpcd networkmanager iwd
-- systemctl enable dhcpcd
-    - systemctl status dhcpcd
-    - systemctl start dhcpcd
-- systemctl enable NetworkManager
-    - systemctl status NetworkManager
-    - systemctl start NetworkManager
-- systemctl enable iwd
-    - systemctl status iwd
-    - systemctl start iwd
+- systemctl enable --now dhcpcd NetworkManager iwd
 
 ### Repositorios
 
