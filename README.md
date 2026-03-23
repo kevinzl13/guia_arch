@@ -235,8 +235,8 @@ Se conecta automaticamente
 -  mount -o noatime,ssd,compress=zstd,subvol=@ /dev/sda1 /mnt
 -  mkdir -p /mnt/home
 -  mkdir -p /mnt/.snapshots
--  mount -o noatime,ssd,compress=zstd,subvol=@home /dev/sda1 /mnt/home
--  mount -o noatime,ssd,compress=zstd,subvol=@snapshots /dev/sda1 /mnt/.snapshots
+-  mount -o noatime,ssd,compress=zstd,subvol=@home /dev/sda3 /mnt/home
+-  mount -o noatime,ssd,compress=zstd,subvol=@snapshots /dev/sda3 /mnt/.snapshots
 - mkdir -p /mnt/boot/efi
 - mount /dev/sda1 /mnt/boot/efi
 
