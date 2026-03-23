@@ -325,6 +325,7 @@ cambia los nombres de los drivers, si tienes el kernel lts va driver-lts para ot
 > Configurar Equipo
 
 - echo **nombre PC** > /etc/hostname
+- en hosts aumentar 127.0.0.1 **nombre PC**.localdomain **nombre PC**
 - passwd **password de root**
 - useradd -m -g users -G wheel,audio,optical,storage,video -s /bin/bash **usuario**
 - passwd **usuario**
