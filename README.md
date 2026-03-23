@@ -220,19 +220,19 @@ Se conecta automaticamente
 - mount /dev/sda1 /mnt/boot/efi
 
 ## Btrfs
-- mkfs.fat -F32 -n "UEFI" /dev/sda1
+- mkfs.fat -F32 /dev/sda1
 - mkswap /dev/sda2
 - swapon /dev/sda2
-- mkfs.btrfs /dev/sda3
+- mkfs.btrfs -f /dev/sda3
 
   > Montar Particiones
 
-- mount /dev/sda3 /mnt
+- mount /dev/sda3 /mnt/
 -  btrfs subvolume create /mnt/@
 -  btrfs subvolume create /mnt/@home
 -  btrfs subvolume create /mnt/@snapshots
 -  umount /mnt
--  mount -o noatime,ssd,compress=zstd,subvol=@ /dev/sda1 /mnt
+-  mount -o noatime,ssd,compress=zstd,subvol=@ /dev/sda3 /mnt
 -  mkdir -p /mnt/home
 -  mkdir -p /mnt/.snapshots
 -  mount -o noatime,ssd,compress=zstd,subvol=@home /dev/sda3 /mnt/home
