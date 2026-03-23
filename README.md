@@ -410,6 +410,7 @@ cambia los nombres de los drivers, si tienes el kernel lts va driver-lts para ot
 ### Adicionales
 
 - pacman -S neofetch lsb-release git wget
+- passwd -l root **quitar usuario root**
 
 ## Salir del sistema
 
