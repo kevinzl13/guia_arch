@@ -242,10 +242,10 @@ Se conecta automaticamente
 
 ## Instalar sistema base
 
-- pacstrap -K /mnt base base-devel nano linux linux-headers mkinitcpio linux-firmware
+- pacstrap -K /mnt base nano linux linux-headers mkinitcpio linux-firmware
 
 > Si se crea con btrfs
-- pacstrap -K /mnt base base-devel nano linux linux-headers mkinitcpio linux-firmware btrfs-progs
+- pacstrap -K /mnt base nano linux linux-headers mkinitcpio linux-firmware btrfs-progs
 
 ### Listado de Kernels
 
