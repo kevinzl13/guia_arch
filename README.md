@@ -336,6 +336,7 @@ cambia los nombres de los drivers, si tienes el kernel lts va driver-lts para ot
 > añadir sudo a usuario
 
 - nano /etc/sudoers
+- EDITOR=nano visudo
 
 > buscar %wheel y descomentar
 
