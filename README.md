@@ -366,18 +366,6 @@ cambia los nombres de los drivers, si tienes el kernel lts va driver-lts para ot
 - pacman -S grub efibootmgr os-prober
 - grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=**Arch**
 - grub-install --target=x86_64-efi --efi-directory=/boot/efi --removable
-
-
-### Agregar icono de Arch
-
-- pacman -S plymouth
-- **temas** ls /usr/share/plymouth/themes
-
-> modificar el grub
-
-- nano /etc/default/grub
-- GRUB_CMDLINE_LINUX_DEFAULT="quiet splash numlock=on"
-- GRUB_DISABLE_OS_PROBER=false
 - grub-mkconfig -o /boot/grub/grub.cfg
 
 ### Configurar Pacman (opcional)
@@ -408,17 +396,29 @@ cambia los nombres de los drivers, si tienes el kernel lts va driver-lts para ot
 
 - pacman -S gnu-free-fonts ttf-hack ttf-inconsolata noto-fonts-emoji ttf-dejavu
 
-### Adicionales
-
-- pacman -S neofetch lsb-release git wget
-- passwd -l root **quitar usuario root**
-
 ## Salir del sistema
 
 - exit
 - umount -R /mnt
 - swapoff /dev/sda2 **/dev/tu swap**
 - reboot
+
+### Adicionales
+
+### Agregar icono de Arch
+
+- pacman -S plymouth
+- **temas** ls /usr/share/plymouth/themes
+
+> modificar el grub
+
+- nano /etc/default/grub
+- GRUB_CMDLINE_LINUX_DEFAULT="quiet splash numlock=on"
+- GRUB_DISABLE_OS_PROBER=false
+- grub-mkconfig -o /boot/grub/grub.cfg
+
+- pacman -S neofetch lsb-release git wget
+- passwd -l root **quitar usuario root**
 
 # Controladores
 
