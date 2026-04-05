@@ -327,7 +327,8 @@ cambia los nombres de los drivers, si tienes el kernel lts va driver-lts para ot
 - echo **nombre PC** > /etc/hostname
 - en hosts aumentar 127.0.0.1 **nombre PC**.localdomain **nombre PC**
 - passwd **password de root**
-- useradd -m -g users -G wheel,audio,optical,storage,video,input,lp -s /bin/bash **usuario**
+- useradd -m -g users -s /bin/bash kevin
+- usermod -aG wheel,adm,cdrom,sudo,dip,optical,video,plugdev,lpadmin,sambashare **usuario**
 - passwd **usuario**
 
 > Instalar sudo
